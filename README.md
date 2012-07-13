@@ -10,7 +10,7 @@ Data is stored as a lump of JSON in Redis.
 
 ## Example
 
-An example app is running [here](http://sharp-journey-9303.herokuapp.com/).
+An example app is running [here](http://tweet-punchcard.herokuapp.com/).
 
 ## Required Heroku add-ons
 
