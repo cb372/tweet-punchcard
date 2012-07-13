@@ -1,3 +1,5 @@
+# Tweet Punchcard
+
 A simple Heroku app to display your tweets and your twitter home timeline as Github-style punchcards.
 
 * `fetch_new_tweets.py` uses the Twitter API to fetch data about newly sent/received tweets and update the punchard data. Should be run at regular intervals, e.g. using the Heroku Scheduler.
@@ -6,17 +8,17 @@ A simple Heroku app to display your tweets and your twitter home timeline as Git
 
 Data is stored as a lump of JSON in Redis.
 
-== Example ==
+## Example
 
 An example app is running [here](http://sharp-journey-9303.herokuapp.com/).
 
-== Required Heroku add-ons ==
+## Required Heroku add-ons
 
 * Scheduler
 
 * Redis To Go
 
-== Setup ==
+## Setup
 
 1. Create a Twitter app. Rename `conf.py.example` to `conf.py` and fill in the details for your app.
 
@@ -24,8 +26,8 @@ An example app is running [here](http://sharp-journey-9303.herokuapp.com/).
 
 3. Add Heroku add-ons:
 
-    heroku addons:add scheduler
-    heroku addons:add redistogo:nano
+        heroku addons:add scheduler
+        heroku addons:add redistogo:nano
 
 4. Push to Heroku
 
@@ -33,11 +35,11 @@ An example app is running [here](http://sharp-journey-9303.herokuapp.com/).
 
 6. If you can't wait for the first task to run, run it manually:
 
-    heroku run python fetch_new_tweets.py
+        heroku run python fetch_new_tweets.py
 
 7. Open your app in a browser and check it works.
 
-== Acknowledgements ==
+## Acknowledgements
 
 * The Twitter OAuth login code is taken from 'Mining the Social Web' by Matthew Russell ([github](https://github.com/ptwobrussell/Mining-the-Social-Web))
 
