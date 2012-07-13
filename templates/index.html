@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Twitter punchcard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="http://d3js.org/d3.v2.min.js" type="text/javascript"></script>
+    <script src="js/d3.punchcard.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      {% autoescape false %}
+      var data = {{ data }}
+      {% endautoescape %}
+      
+      $(function() {
+        $('#lastUpdated').text(data.lastUpdated);
+        $('#myTweetsCount').text(data.myTweets.count);
+        $('#timelineCount').text(data.timeline.count);
+
+        renderPunchcard("mytweets-pcard", data.myTweets.punchcard);
+        renderPunchcard("timeline-pcard", data.timeline.punchcard);
+      });
+    </script>
+    <link rel="stylesheet" media="screen" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <section id="info">
+            <div class="page-header">
+              <h1>General Info</h1>
+            </div>
+            <h2>Data</h2>
+            <div class="row">
+              <div class="span6">
+                <table class="table">
+                  <tr>
+                    <td>Last updated</td><td id="lastUpdated">???</td>
+                  </tr>
+                  <tr>
+                    <td>My tweets</td><td id="myTweetsCount">???</td>
+                  </tr>
+                  <tr>
+                    <td>Tweets from my timeline</td><td id="timelineCount">???</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </section>
+          <section id="punchcards">
+            <div class="page-header">
+              <h1>Punchcards</h1>
+            </div>
+
+            <h2>My tweets</h2>
+            <div id="mytweets-pcard"></div>
+
+            <hr/>
+            <h2>Tweets in my timeline</h2>
+            <div id="timeline-pcard"></div>
+          </section>
+        </div>
+      </div><!-- row -->
+    </div><!-- container -->
+  </body>
+</html>
+
+
