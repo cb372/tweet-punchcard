@@ -21,7 +21,7 @@ def login():
 
         write_token_file(conf.TOKEN_FILE, oauth_token, oauth_token_secret)
          
-    return twitter.Twitter(domain='api.twitter.com', api_version='1',
+    return twitter.Twitter(domain='api.twitter.com', api_version='1.1',
                         auth=twitter.oauth.OAuth(oauth_token, oauth_token_secret,
                         conf.CONSUMER_KEY, conf.CONSUMER_SECRET))
 
