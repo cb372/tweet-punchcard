@@ -22,7 +22,7 @@ An example app is running [here](http://tweet-punchcard.herokuapp.com/).
 
 1. Create a Twitter app. Set the `TWITTER_APP_NAME`, `TWITTER_CONSUMER_KEY` and `TWITTER_CONSUMER_KEY_SECRET` config vars: 
 
-        heroku config:set TWITTER_APP_NAME=MyTwitterApp CONSUMER_KEY=... CONSUMER_SECRET=...
+        heroku config:set TWITTER_APP_NAME=MyTwitterApp TWITTER_CONSUMER_KEY=... TWITTER_CONSUMER_SECRET=...
 
 2. Run `python create_oath_token.py` and authorise your app to access your tweets. Follow the instructions to set the remaining config vars.
 
