@@ -20,14 +20,16 @@ An example app is running [here](http://tweet-punchcard.herokuapp.com/).
 
 ## Setup
 
-1. Create a Twitter app. Rename `conf.py.example` to `conf.py` and fill in the details for your app.
+1. Create a Twitter app. Set the `TWITTER_APP_NAME`, `TWITTER_CONSUMER_KEY` and `TWITTER_CONSUMER_KEY_SECRET` config vars: 
 
-2. Run `python twitter__login.py` and authorise your app to access your tweets. Add the resulting file `out/twitter.oauth` to git.
+        heroku config:set TWITTER_APP_NAME=MyTwitterApp CONSUMER_KEY=... CONSUMER_SECRET=...
+
+2. Run `python create_oath_token.py` and authorise your app to access your tweets. Follow the instructions to set the remaining config vars.
 
 3. Add Heroku add-ons:
 
         heroku addons:add scheduler
-        heroku addons:add redistogo:nano
+        heroku addons:add redistogo
 
 4. Push to Heroku
 
@@ -41,6 +43,6 @@ An example app is running [here](http://tweet-punchcard.herokuapp.com/).
 
 ## Acknowledgements
 
-* The Twitter OAuth login code is taken from 'Mining the Social Web' by Matthew Russell ([github](https://github.com/ptwobrussell/Mining-the-Social-Web))
+* The Twitter OAuth login code is inspired by 'Mining the Social Web' by Matthew Russell ([github](https://github.com/ptwobrussell/Mining-the-Social-Web))
 
 * The D3 punchcard code is based on [this code](https://github.com/jeyb/d3.punchcard) by @jeyb. 
